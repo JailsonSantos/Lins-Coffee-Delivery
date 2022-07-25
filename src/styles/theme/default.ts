@@ -13,7 +13,7 @@ export const defaultTheme = {
 
     "brand-purple-dark": "#4B2995",
     "brand-purple": "#8047F8",
-    "brand-purple-label": "#EBE5F9",
+    "brand-purple-light": "#EBE5F9",
     "brand-yellow-dark": "#C47F17",
     "brand-yellow": "#DBAC2C",
     "brand-yellow-light": "#F1E9C9",
