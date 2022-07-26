@@ -13,7 +13,7 @@ export function DescriptionSite() {
       <AreaTextDescription>
         <div>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-          <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
+          <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora.</p>
         </div>
         <AreaInfoItem>
           <InfoItem icon={IconCart} title="Compra simples e segura" />

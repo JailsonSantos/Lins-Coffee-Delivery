@@ -10,6 +10,7 @@ export const AreaDescriptionContainer = styled.div`
 
 export const AreaTextDescription = styled.div`
   display: flex;
+  flex: 2;
   width: 43%;
   flex-direction: column;
   align-items: center;
@@ -32,6 +33,7 @@ export const AreaTextDescription = styled.div`
 
 export const AreaInfoItem = styled.div`
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2.125rem;
@@ -39,5 +41,5 @@ export const AreaInfoItem = styled.div`
 
 
 export const AdvertisingImage = styled.img`
-  width: 30rem;
+  width: 25rem;
 `

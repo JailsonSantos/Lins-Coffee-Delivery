@@ -99,15 +99,15 @@ export const FooterPayment = styled.div`
   gap: 0.75rem;
 
   button {
+    border: none;
     width: 12rem ;
     display: flex;
+    padding: 1rem;
+    border-radius: 6px;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
-    border: none;
-    padding: 1rem;
-    background-color: ${({ theme }) => theme.colors['base-button']};
     color: ${({ theme }) => theme.colors["base-text"]};
+    background-color: ${({ theme }) => theme.colors['base-button']};
     font-size: ${({ theme }) => theme.textSizes['components-button-s']};
   }
 `;

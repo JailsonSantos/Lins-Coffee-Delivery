@@ -6,12 +6,12 @@ export const CoffeItemContainer = styled.div`
   height: 310px;
   background: ${({ theme }) => theme.colors["base-card"]};
   border-radius: 6px 36px;
-  padding: 0.5rem;
+  padding: 0.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
   img{
     position: relative;
@@ -56,12 +56,13 @@ export const FooterCart = styled.div`
   justify-content: center;
 `;
 
-export const AreaCart = styled.span`
+export const AreaCart = styled.button`
   width: 2.375rem;
   height: 2.375rem;
   padding: 8px;
   display: flex;
   border-radius: 6px;
+  border: none;
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors["brand-purple-dark"]};

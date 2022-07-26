@@ -15,7 +15,7 @@ interface CoffeeItemProps {
 export function CoffeeItem({ coffee }: CoffeeItemProps) {
   return (
     <CoffeItemContainer>
-      <img src={coffee.img} alt="Imagem de uma xícara de café." width="150" />
+      <img src={coffee.img} alt="Imagem de uma xícara de café." width="140" height="130" />
       <div>
         {
           coffee.type.map((type, index) => (
