@@ -1,4 +1,4 @@
-import { ShoppingCart } from "phosphor-react";
+import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { AreaCart, AreaQuantityCoffee, CoffeeButton, CoffeeQuantity, CoffeItemContainer, FooterCart, PriceCoffee, TypeCoffee } from "./styles";
 
 interface CoffeeItemProps {
@@ -29,9 +29,13 @@ export function CoffeeItem({ coffee }: CoffeeItemProps) {
       <FooterCart>
         <PriceCoffee><span>R$</span> {coffee.price}</PriceCoffee>
         <AreaQuantityCoffee>
-          <CoffeeButton> - </CoffeeButton>
+          <CoffeeButton>
+            <Minus size={32} />
+          </CoffeeButton>
           <CoffeeQuantity>1</CoffeeQuantity>
-          <CoffeeButton> + </CoffeeButton>
+          <CoffeeButton>
+            <Plus size={32} />
+          </CoffeeButton>
         </AreaQuantityCoffee>
         <AreaCart>
           <ShoppingCart size={22} weight="fill" />
