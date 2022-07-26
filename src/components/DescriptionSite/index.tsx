@@ -1,12 +1,12 @@
-import ImagemPropaganda from '../../assets/imagem-propaganda.svg'
+import ImagemPropaganda from '../../assets/imagempropaganda.svg'
 import { InfoItem } from '../../pages/Home/components/InfoItem'
 import { AdvertisingImage, AreaDescriptionContainer, AreaInfoItem, AreaTextDescription } from './styles'
 
 
-import IconCart from '../../assets/icon-cart.svg';
-import IconPacking from '../../assets/icon-packing.svg';
-import IconWatch from '../../assets/icon-watch.svg';
-import IconCoffee from '../../assets/icon-coffee.svg';
+import IconCart from '../../assets/iconcart.svg';
+import IconPacking from '../../assets/iconpacking.svg';
+import IconWatch from '../../assets/iconwatch.svg';
+import IconCoffee from '../../assets/iconcoffee.svg';
 export function DescriptionSite() {
   return (
     <AreaDescriptionContainer>

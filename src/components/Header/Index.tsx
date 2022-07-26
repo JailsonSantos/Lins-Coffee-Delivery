@@ -1,5 +1,5 @@
 import { HeaderContainer, LocalizationButton, CartButton } from "./styles";
-import LogoCoffeeDelivery from '../../assets/logo-coffee-delivery.svg';
+import LogoCoffeeDelivery from '../../assets/logocoffeedelivery.svg';
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { useTheme } from "styled-components";
 import { NavLink } from "react-router-dom";
