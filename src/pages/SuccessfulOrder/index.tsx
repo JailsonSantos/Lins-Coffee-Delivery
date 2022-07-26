@@ -8,7 +8,6 @@ import {
   TitleDescription
 } from "./styles";
 import Delivery from '../../assets/delivery.svg';
-import IconWatch from '../../assets/icon-watch.svg';
 import IconDollar from '../../assets/icon-dollar.svg';
 import IconLocalization from '../../assets/icon-localization.svg';
 
@@ -24,7 +23,7 @@ export function SuccessfulOrder() {
             <p>Entrega em <span>Rua João Daniel Martinelli, 102, quadra 07,</span> Av. Litorânea - São Luis, MA</p>
           </AreaIconDescription>
           <AreaIconDescription>
-            <img src={IconWatch} alt="" />
+            <img src={IconDollar} alt="" />
             <div>
               <p>Previsão de entrega</p>
               <span>20 minutos - 30 minutos</span>
