@@ -1,7 +1,7 @@
 import { AreaDescriptionAddress, AreaIconDescription, AreaInfoDescription, DeliveryImage, SubtitleDescription, SuccessfulOrderContainer, TitleDescription } from "./styles";
 import Delivery from '../../assets/delivery.svg';
 import WatchIcon from '../../assets/icon-watch.svg';
-import DollarIcon from '../../assets/icon-money.svg';
+import DollarIcon from '../../assets/icon-dollar.svg';
 import LocalizationIcon from '../../assets/icon-localization.svg';
 
 export function SuccessfulOrder() {
