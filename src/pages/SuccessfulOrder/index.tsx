@@ -13,7 +13,7 @@ export function SuccessfulOrder() {
         <AreaDescriptionAddress>
           <AreaIconDescription>
             <img src={LocalizationIcon} alt="" />
-            <p>Entrega em <span>Rua João Daniel Martinelli, 102</span> Farrapos - Porto Alegre, RS</p>
+            <p>Entrega em <span>Rua João Daniel Martinelli, 102, quadra 07,</span> Av. Litorânea - São Luis, MA</p>
           </AreaIconDescription>
           <AreaIconDescription>
             <img src={WatchIcon} alt="" />

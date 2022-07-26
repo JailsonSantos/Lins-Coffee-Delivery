@@ -1,17 +1,25 @@
 import styled from "styled-components";
+import { mobile, tablet, notebook } from '../../styles/responsive';
 
 export const SuccessfulOrderContainer = styled.div`
   display: flex;
+  margin-top: 3rem;
   align-items: flex-end;
   justify-content: space-between;
-  margin-top: 3rem;
+
+  ${notebook({ marginTop: '1rem' })}; 
+
+  ${tablet({ marginTop: '1rem' })};
+
+  ${mobile({ flexDirection: 'column-reverse', marginTop: '1rem' })};
 `;
 
-export const AreaInfoDescription = styled.div`
-
-`;
+export const AreaInfoDescription = styled.div``;
 
 export const TitleDescription = styled.h1`
+
+${mobile({ fontSize: '1.7rem' })};
+
   font-weight: 800;
   font-family: ${({ theme }) => theme.fonts.title};
   color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
@@ -19,9 +27,9 @@ export const TitleDescription = styled.h1`
 `;
 
 export const SubtitleDescription = styled.p`
+  margin-bottom: 2.5rem;
   color: ${({ theme }) => theme.colors["base-subtitle"]};
   font-size: ${({ theme }) => theme.textSizes["text-regular-l"]};
-  margin-bottom: 2.5rem;
 `;
 
 export const AreaDescriptionAddress = styled.div`
@@ -31,9 +39,11 @@ export const AreaDescriptionAddress = styled.div`
   justify-content: space-between;
   border-radius: 6px 36px 6px 36px;
   height: 17rem;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 0.75rem;
   background: ${({ theme }) => theme.colors["base-card"]};
+
+  ${mobile({ padding: '0.5rem' })};
 `;
 
 export const AreaIconDescription = styled.div`
@@ -52,5 +62,7 @@ export const AreaIconDescription = styled.div`
 `;
 
 export const DeliveryImage = styled.img`
+  ${mobile({ width: '100%', margin: '0 auto' })};
+
   width: 50%;
 `;

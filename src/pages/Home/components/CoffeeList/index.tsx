@@ -1,21 +1,20 @@
 import { CoffeeItem } from "../CoffeeItem";
-import { AreaCoffeeItem } from "./styles";
+import { AreaCoffeeItem, CoffeListController, TitleCoffee } from "./styles";
 
 import { data } from "../../../../data/serverFake";
 
 export function CoffeeList() {
-
+  //Dados API FAKE
   const { coffees } = data;
 
-  console.log(coffees);
-
-  return (<>
-    <h1>Nossos cafés</h1>
-    <AreaCoffeeItem>
-      {coffees.map(coffee => (
-        <CoffeeItem key={coffee.id} coffee={coffee} />
-      ))}
-    </AreaCoffeeItem>
-  </>
+  return (
+    <CoffeListController>
+      <TitleCoffee>Nossos cafés</TitleCoffee>
+      <AreaCoffeeItem>
+        {coffees.map(coffee => (
+          <CoffeeItem key={coffee.id} coffee={coffee} />
+        ))}
+      </AreaCoffeeItem>
+    </CoffeListController>
   )
 }

@@ -1,6 +1,14 @@
 import styled from 'styled-components';
+import { mobile, tablet, notebook } from '../../styles/responsive';
 
 export const HeaderContainer = styled.div`
+
+  ${notebook({ height: '5.5rem' })}; 
+
+  ${tablet({ height: '5rem' })};
+
+  ${mobile({ height: '4rem' })};
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,6 +17,12 @@ export const HeaderContainer = styled.div`
 
   img{ 
     margin: 2rem 0;
+
+    ${notebook({ margin: '0.5rem 0' })}; 
+
+    ${tablet({ margin: '0.5rem 0' })};  
+
+    ${mobile({ margin: '0' })};
   }
 
   > div {

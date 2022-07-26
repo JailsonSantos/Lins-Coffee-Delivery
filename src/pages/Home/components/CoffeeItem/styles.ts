@@ -1,17 +1,20 @@
 import styled from "styled-components";
-
+import { mobile } from '../../../../styles/responsive';
 
 export const CoffeItemContainer = styled.div`
+
+${mobile({ width: "90%", padding: "1rem" })};
+
   width: 230px;
   height: 310px;
-  background: ${({ theme }) => theme.colors["base-card"]};
-  border-radius: 6px 36px;
-  padding: 0.3rem;
   display: flex;
-  flex-direction: column;
+  padding: 0.3rem;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 1.5rem;
+  flex-direction: column;
+  border-radius: 6px 36px;
+  justify-content: space-between;
+  background: ${({ theme }) => theme.colors["base-card"]};
 
   img{
     position: relative;
@@ -87,6 +90,7 @@ export const AreaQuantityCoffee = styled.div`
   width: 72px;
   height: 38px;
   padding: 8px;
+  margin: 0 5px;
   display: flex;
   border-radius: 6px;
   align-items: center;

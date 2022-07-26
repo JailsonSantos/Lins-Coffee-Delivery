@@ -1,10 +1,10 @@
 import { Minus, Plus, Trash } from "phosphor-react";
-import { AreaButtonCart, AreaQuantityCoffee, CoffeeButton, CoffeeQuantity, ItemCartContainer, PriceCoffee, TitleCoffee } from "./styles";
+import { AreaButtonCart, AreaQuantityCoffee, CoffeeButton, CoffeeQuantity, ImageCoffee, ItemCartContainer, PriceCoffee, TitleCoffee } from "./styles";
 
 export function ItemCart() {
   return (
     <ItemCartContainer>
-      <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Cafezinho-Caf%C3%A9-PNG-1024x927.png" alt="Xícara de Café" width="65" />
+      <ImageCoffee src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Cafezinho-Caf%C3%A9-PNG-1024x927.png" alt="Xícara de Café" />
       <div>
         <TitleCoffee>Expresso Tradicional</TitleCoffee>
         <AreaButtonCart>

@@ -1,21 +1,31 @@
 import styled from 'styled-components';
+import { mobile, notebook, tablet } from '../../styles/responsive';
 
 export const AreaCheckoutContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 1.5rem 0;
   gap: 2rem;
+  display: flex;
+  margin: 1.5rem 0;
+  justify-content: space-between;
+
+  ${tablet({ flexDirection: 'column' })};
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 export const AreaAddress = styled.div`
 
-  form{ 
-    width: 40rem;
-    height: 21rem;
+  ${notebook({ width: '50%' })}
+  ${tablet({ width: '100%' })}
+
+  form{     
+    width: 100%;
     padding: 1.5rem;
     border-radius: 6px;
     margin-bottom: 0.75rem;
     background: ${({ theme }) => theme.colors["base-card"]};
+
+    ${notebook({ padding: '1rem' })};
+    ${tablet({ width: '100%', height: '100%', padding: '1rem' })};
+    ${mobile({ width: '100%', height: '100%', padding: '1rem' })};
 
     > div {
       display: flex;
@@ -34,6 +44,10 @@ export const AreaAddress = styled.div`
       padding: 0.75rem;
       background: ${({ theme }) => theme.colors['base-input']};
       border: 1px solid ${({ theme }) => theme.colors['base-button']};
+      
+      ${notebook({ width: '100%' })};
+      ${tablet({ width: '100%' })};
+      ${mobile({ width: '100%' })};
     }
   }
 `;
@@ -58,8 +72,8 @@ export const Subtitle = styled.p`
 
 export const AreaInputs = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
+  flex-wrap: wrap;
 
   input::placeholder{
     color: ${({ theme }) => theme.colors['base-label']};
@@ -68,20 +82,25 @@ export const AreaInputs = styled.div`
 `;
 
 export const AreaPayment = styled.div`
-    width: 40rem;
-    height: 11rem;
-    padding: 1.5rem;
-    border-radius: 6px;
-    background: ${({ theme }) => theme.colors["base-card"]};
+ 
+  width: 100%;
+  height: 11rem;
+  padding: 1.5rem;
+  border-radius: 6px;
+  background: ${({ theme }) => theme.colors["base-card"]};
 
-    > div {
-      display: flex;
-      margin-bottom: 2rem;
+  ${notebook({ width: '100%', padding: '1rem' })};
+  ${tablet({ width: '100%', height: '100%', padding: '1rem' })};
+  ${mobile({ width: '100%', height: '100%', padding: '1rem' })};
 
-      svg{
-        color: ${({ theme }) => theme.colors['brand-purple']};
-        margin-right: 0.5rem;
-      }
+  > div {
+    display: flex;
+    margin-bottom: 2rem;
+
+    svg{
+      color: ${({ theme }) => theme.colors['brand-purple']};
+      margin-right: 0.5rem;
+    }
 }`;
 
 export const TitlePayment = styled.p`
@@ -98,6 +117,8 @@ export const FooterPayment = styled.div`
   display: flex; 
   gap: 0.75rem;
 
+  ${mobile({ flexDirection: "column", alignItems: "center" })};
+
   button {
     border: none;
     width: 12rem ;
@@ -109,22 +130,26 @@ export const FooterPayment = styled.div`
     color: ${({ theme }) => theme.colors["base-text"]};
     background-color: ${({ theme }) => theme.colors['base-button']};
     font-size: ${({ theme }) => theme.textSizes['components-button-s']};
+
+    ${mobile({ justifyContent: "flex-start" })};
   }
 `;
 
 export const AreaCart = styled.div`
-  flex: 1;
-
-  > div{
+ 
+   >div{
     display: flex;
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: 32.5rem;
+    margin-bottom: 0.75rem;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 6px 44px 6px 44px;
-    max-height: 32.5rem;
-    overflow-y: auto;
-    padding: 1.5rem;
-    margin-bottom: 0.75rem;
     background: ${({ theme }) => theme.colors["base-card"]};
+
+    ${notebook({ padding: '1rem' })};
+    ${mobile({ padding: '1rem' })};
 
     ::-webkit-scrollbar {
       display: none;
@@ -133,18 +158,19 @@ export const AreaCart = styled.div`
 `;
 
 export const TitleOfCart = styled.h1`
+  font-weight: 700;
+  margin-bottom: 1rem;
   font-family: ${({ theme }) => theme.fonts.title};
   color: ${({ theme }) => theme.colors['base-subtitle']};
   font-size: ${({ theme }) => theme.textSizes['title-title-xs']};
-  font-weight: 700;
-  margin-bottom: 1rem;
 `;
 
 export const TopCart = styled.div``;
+
 export const BodyCart = styled.div`
+  gap: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 `;
 
 export const BaseCart = styled.div`
@@ -171,8 +197,8 @@ export const TotalPrice = styled(BaseCart)`
 export const BottomCart = styled.button`
   width: 100%;
   border: none;
-  border-radius: 6px;
   padding: 0.75rem;
+  border-radius: 6px;
   color: ${({ theme }) => theme.colors["base-white"]};
   background: ${({ theme }) => theme.colors["brand-yellow"]};
   font-size: ${({ theme }) => theme.textSizes["components-button-g"]};

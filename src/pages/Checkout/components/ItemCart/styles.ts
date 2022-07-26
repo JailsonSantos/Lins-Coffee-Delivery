@@ -1,13 +1,24 @@
 import styled from 'styled-components';
-
+import { mobile, tablet, notebook } from '../../../../styles/responsive';
 
 export const ItemCartContainer = styled.div`
+
+  ${notebook({ width: '368px' })};
+  ${tablet({ width: '100%' })};
+  ${mobile({ width: '100%' })};
+
   display: flex;
   width: 368px;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors['base-button']};
+`;
+
+export const ImageCoffee = styled.img`
+  ${mobile({ width: '50px', height: '50px' })};
+
+  width: 65px;
 `;
 
 export const TitleCoffee = styled.h1`
@@ -24,6 +35,7 @@ export const PriceCoffee = styled.h1`
 `;
 
 export const AreaButtonCart = styled.div`
+  
   display: flex;
   gap: 0.5rem;
 
