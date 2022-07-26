@@ -1,8 +1,16 @@
-import { AreaDescriptionAddress, AreaIconDescription, AreaInfoDescription, DeliveryImage, SubtitleDescription, SuccessfulOrderContainer, TitleDescription } from "./styles";
+import {
+  AreaDescriptionAddress,
+  AreaIconDescription,
+  AreaInfoDescription,
+  DeliveryImage,
+  SubtitleDescription,
+  SuccessfulOrderContainer,
+  TitleDescription
+} from "./styles";
 import Delivery from '../../assets/delivery.svg';
-import WatchIcon from '../../assets/icon-watch.svg';
-import DollarIcon from '../../assets/icon-dollar.svg';
-import LocalizationIcon from '../../assets/icon-localization.svg';
+import IconWatch from '../../assets/icon-watch.svg';
+import IconDollar from '../../assets/icon-dollar.svg';
+import IconLocalization from '../../assets/icon-localization.svg';
 
 export function SuccessfulOrder() {
   return (
@@ -12,18 +20,18 @@ export function SuccessfulOrder() {
         <SubtitleDescription>Agora é só aguardar que logo o café chegará até você.</SubtitleDescription>
         <AreaDescriptionAddress>
           <AreaIconDescription>
-            <img src={LocalizationIcon} alt="" />
+            <img src={IconLocalization} alt="" />
             <p>Entrega em <span>Rua João Daniel Martinelli, 102, quadra 07,</span> Av. Litorânea - São Luis, MA</p>
           </AreaIconDescription>
           <AreaIconDescription>
-            <img src={WatchIcon} alt="" />
+            <img src={IconWatch} alt="" />
             <div>
               <p>Previsão de entrega</p>
               <span>20 minutos - 30 minutos</span>
             </div>
           </AreaIconDescription>
           <AreaIconDescription>
-            <img src={DollarIcon} alt="" />
+            <img src={IconDollar} alt="" />
             <div>
               <p>Pagamento na entrega</p>
               <span>Cartão de Crédito</span>
