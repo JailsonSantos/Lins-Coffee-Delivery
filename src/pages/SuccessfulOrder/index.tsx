@@ -8,11 +8,11 @@ import {
   TitleDescription
 } from "./styles";
 import Delivery from '../../assets/delivery.svg';
-import { CurrencyCircleDollar, MapPin, Timer } from "phosphor-react";
-import { useTheme } from "styled-components";
+import IconWatch from '../../assets/iconwatch.svg';
+import IconDollar from '../../assets/icondollar.svg';
+import IconLocalization from '../../assets/iconlocalization.svg';
 
 export function SuccessfulOrder() {
-  const theme = useTheme()
   return (
     <SuccessfulOrderContainer>
       <AreaInfoDescription>
@@ -20,18 +20,18 @@ export function SuccessfulOrder() {
         <SubtitleDescription>Agora é só aguardar que logo o café chegará até você.</SubtitleDescription>
         <AreaDescriptionAddress>
           <AreaIconDescription>
-            <MapPin size={32} color={theme.colors["brand-purple-dark"]} />
+            <img src={IconLocalization} alt="" />
             <p>Entrega em <span>Rua João Daniel Martinelli, 102, quadra 07,</span> Av. Litorânea - São Luis, MA</p>
           </AreaIconDescription>
           <AreaIconDescription>
-            <Timer size={32} color={theme.colors["brand-yellow"]} />
+            <img src={IconWatch} alt="" />
             <div>
               <p>Previsão de entrega</p>
               <span>20 minutos - 30 minutos</span>
             </div>
           </AreaIconDescription>
           <AreaIconDescription>
-            <CurrencyCircleDollar size={32} color={theme.colors["brand-yellow-dark"]} />
+            <img src={IconDollar} alt="" />
             <div>
               <p>Pagamento na entrega</p>
               <span>Cartão de Crédito</span>
