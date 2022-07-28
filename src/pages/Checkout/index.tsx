@@ -22,14 +22,30 @@ import {
   TotalQuantityItens
 } from "./styles";
 
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from "../../redux/store";
+import { clearCart } from "../../redux/apiCalls";
+
 export function Checkout() {
+
+  const dispatch = useDispatch();
+
+  const cart = useSelector((state: RootState) => state.cart);
+
+  const taxaOfDelivery = 5.99;
+  let totalFinal = 0;
+
+  if (cart.total > 0) {
+    totalFinal = Number((cart.total + taxaOfDelivery).toFixed(2));
+  }
+
   return (
     <AreaCheckoutContainer>
       <AreaAddress>
         <TitleOfAddress>Complete seu pedido</TitleOfAddress>
         <form action="">
           <div>
-            <MapPinLine size={20} weight="thin" />
+            <MapPinLine size={20} />
             <div>
               <Title>Endereço de Entrega</Title>
               <Subtitle>Informe o endereço onde deseja receber seu pedido</Subtitle>
@@ -49,7 +65,7 @@ export function Checkout() {
 
         <AreaPayment>
           <div>
-            <CurrencyDollar size={20} weight="thin" />
+            <CurrencyDollar size={20} />
             <div>
               <TitlePayment>Pagamento</TitlePayment>
               <SubtitlePayment>O pagamento é feito na entrega. Escolha a forma que deseja pagar</SubtitlePayment>
@@ -76,22 +92,31 @@ export function Checkout() {
         <TitleOfCart>Cafés selecionados</TitleOfCart>
         <div>
           <TopCart>
-            {[0, 1, 2].map((value, index) => (
-              <ItemCart key={index} />
-            ))}
+
+            {cart.quantity > 0 &&
+              cart?.coffees?.map((coffee, index) => (
+                <ItemCart key={index} coffee={coffee} />
+              ))
+            }
+
           </TopCart>
           <BodyCart>
             <TotalQuantityItens>
-              <span>Total de Itens</span> <span>R$ 29,90</span>
+              <span>Quantidade de Itens</span> <span>{cart.quantity}</span>
             </TotalQuantityItens>
             <EntregaPedido>
-              <span>Entrega</span> <span>R$ 3,99</span>
+              <span>Subtotal dos itens</span> <span>R$ {cart.total.toFixed(2)}</span>
+            </EntregaPedido>
+            <EntregaPedido>
+              <span>Taxa de Entrega</span> <span>R$ {taxaOfDelivery.toFixed(2)}</span>
             </EntregaPedido>
             <TotalPrice>
-              <span>Total</span> <span>R$ 33,90</span>
+              <span>Total a Pagar</span> <span>R$ {totalFinal}</span>
             </TotalPrice>
             <NavLink to="/successfulorder" title="Confirmação de Sucesso">
-              <BottomCart>CONFIRMAR PEDIDO</BottomCart>
+              <BottomCart onClick={() => clearCart(dispatch)}>
+                CONFIRMAR PEDIDO
+              </BottomCart>
             </NavLink>
           </BodyCart>
         </div>

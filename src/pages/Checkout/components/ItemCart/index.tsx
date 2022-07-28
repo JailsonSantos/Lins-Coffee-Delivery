@@ -1,25 +1,125 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Minus, Plus, Trash } from "phosphor-react";
-import { AreaButtonCart, AreaQuantityCoffee, CoffeeButton, CoffeeQuantity, ImageCoffee, ItemCartContainer, PriceCoffee, TitleCoffee } from "./styles";
+import { addTotal, deleteProduct, minusTotal } from "../../../../redux/cartRedux";
+import {
+  AreaButtonCart,
+  AreaQuantityCoffee,
+  CoffeeButton,
+  CoffeeQuantity,
+  ImageCoffee,
+  ItemCartContainer,
+  PriceCoffee,
+  TitleCoffee
+} from "./styles";
 
-export function ItemCart() {
+interface CoffeeProps {
+  coffee: {
+    id: string;
+    type: string[];
+    name: string;
+    description: string;
+    img: string;
+    price: number;
+    quantityOfCoffee: number;
+  }
+}
+
+export function ItemCart({ coffee }: CoffeeProps) {
+
+  const dispatch = useDispatch();
+
+  const [quantity, setQuantity] = useState(coffee.quantityOfCoffee);
+
+  const handleQuantity = (type: string) => {
+    if (type === "desc") {
+      if (quantity > 1) {
+        setQuantity(quantity - 1)
+
+        const newTotal = 1 * coffee.price
+
+        const newCoffee = {
+          id: coffee.id,
+          type: coffee.type,
+          name: coffee.name,
+          description: coffee.description,
+          img: coffee.img,
+          price: coffee.price,
+          quantityOfCoffee: quantity - 1
+        }
+
+        dispatch(
+          minusTotal(
+            {
+              ...newCoffee,
+              total: newTotal,
+            }
+          )
+        );
+
+      }
+    } else {
+      setQuantity(quantity + 1)
+
+      const newTotal = 1 * coffee.price
+
+      const newCoffee = {
+        id: coffee.id,
+        type: coffee.type,
+        name: coffee.name,
+        description: coffee.description,
+        img: coffee.img,
+        price: coffee.price,
+        quantityOfCoffee: quantity + 1
+      }
+
+      dispatch(
+        addTotal(
+          {
+            ...newCoffee,
+            total: newTotal,
+          }
+        )
+      );
+    }
+  }
+
+  const handleDeleteCoffeeOfCart = () => {
+    dispatch(
+      deleteProduct(
+        {
+          ...coffee,
+        }
+      )
+    );
+  }
+
   return (
     <ItemCartContainer>
-      <ImageCoffee src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Cafezinho-Caf%C3%A9-PNG-1024x927.png" alt="Xícara de Café" />
+      <ImageCoffee src={coffee.img} alt="Xícara de Café" />
       <div>
-        <TitleCoffee>Expresso Tradicional</TitleCoffee>
+        <TitleCoffee>
+          {coffee?.type?.map((type, index) => (
+            <span key={index}> {type}{' '}</span>
+          ))}
+        </TitleCoffee>
         <AreaButtonCart>
           <AreaQuantityCoffee>
-            <button><Minus size={32} />  </button>
-            <CoffeeQuantity>1</CoffeeQuantity>
-            <button> <Plus size={32} /> </button>
+            <CoffeeButton onClick={() => handleQuantity("desc")}>
+              <Minus size={16} weight="bold" />
+            </CoffeeButton>
+            <CoffeeQuantity>{quantity}</CoffeeQuantity>
+            <CoffeeButton onClick={() => handleQuantity("inc")}>
+              <Plus size={16} weight="bold" />
+            </CoffeeButton>
           </AreaQuantityCoffee>
-          <button>
+          <button onClick={handleDeleteCoffeeOfCart}>
             <Trash size={20} />
             REMOVER
           </button>
         </AreaButtonCart>
       </div>
-      <PriceCoffee>RS 9,99</PriceCoffee>
+      <PriceCoffee>RS {(quantity * coffee.price).toFixed(2)}</PriceCoffee>
     </ItemCartContainer>
   )
 }

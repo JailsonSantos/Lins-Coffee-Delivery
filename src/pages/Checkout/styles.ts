@@ -53,11 +53,11 @@ export const AreaAddress = styled.div`
 `;
 
 export const TitleOfAddress = styled.h1`
+  font-weight: 700;
+  margin-bottom: 1rem;
   font-family: ${({ theme }) => theme.fonts.title};
   color: ${({ theme }) => theme.colors['base-subtitle']};
   font-size: ${({ theme }) => theme.textSizes['title-title-xs']};
-  font-weight: 700;
-  margin-bottom: 1rem;
 `;
 
 export const Title = styled.p`
@@ -71,9 +71,19 @@ export const Subtitle = styled.p`
 `;
 
 export const AreaInputs = styled.div`
-  display: flex;
   gap: 1rem;
+  display: flex;
   flex-wrap: wrap;
+  
+  input{
+    border: transparent;
+    color: ${({ theme }) => theme.colors['base-text']};
+    
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 1px ${({ theme }) => theme.colors['brand-yellow-dark']};
+    }
+  }
 
   input::placeholder{
     color: ${({ theme }) => theme.colors['base-label']};
@@ -98,8 +108,8 @@ export const AreaPayment = styled.div`
     margin-bottom: 2rem;
 
     svg{
-      color: ${({ theme }) => theme.colors['brand-purple']};
       margin-right: 0.5rem;
+      color: ${({ theme }) => theme.colors['brand-purple-dark']};
     }
 }`;
 
@@ -120,28 +130,44 @@ export const FooterPayment = styled.div`
   ${mobile({ flexDirection: "column", alignItems: "center" })};
 
   button {
-    border: none;
     width: 12rem ;
     display: flex;
     padding: 1rem;
     border-radius: 6px;
     align-items: center;
+    border: transparent;
     justify-content: center;
     color: ${({ theme }) => theme.colors["base-text"]};
     background-color: ${({ theme }) => theme.colors['base-button']};
     font-size: ${({ theme }) => theme.textSizes['components-button-s']};
+
+
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 1px ${({ theme }) => theme.colors['brand-purple']};
+    }
+
+    &:hover{
+      color: ${({ theme }) => theme.colors["base-subtitle"]};
+      background-color: ${({ theme }) => theme.colors['base-hover']};
+    }
 
     ${mobile({ justifyContent: "flex-start" })};
   }
 `;
 
 export const AreaCart = styled.div`
- 
-   >div{
+
+  >div{
+  
+    ${notebook({ minWidth: "400px" })};
+    ${mobile({ minWidth: " auto" })};
+  
     display: flex;
     padding: 1.5rem;
     overflow-y: auto;
     max-height: 32.5rem;
+    min-width: 30rem;
     margin-bottom: 0.75rem;
     flex-direction: column;
     justify-content: space-between;
@@ -202,4 +228,8 @@ export const BottomCart = styled.button`
   color: ${({ theme }) => theme.colors["base-white"]};
   background: ${({ theme }) => theme.colors["brand-yellow"]};
   font-size: ${({ theme }) => theme.textSizes["components-button-g"]};
+
+  &:hover{
+    background: ${({ theme }) => theme.colors["brand-yellow-dark"]};
+  }
 `;

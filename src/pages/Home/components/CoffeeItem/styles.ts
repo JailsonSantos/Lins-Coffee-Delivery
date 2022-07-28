@@ -22,11 +22,11 @@ ${mobile({ width: "90%", padding: "1rem" })};
   }
 
   div{
+    gap: 4px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
   }
 
   h1{
@@ -39,17 +39,17 @@ ${mobile({ width: "90%", padding: "1rem" })};
     text-align: center;
     line-height: 18.2px;
     color: ${({ theme }) => theme.colors["base-label"]};
-    font-size: ${({ theme }) => theme.textSizes["text-regular-s"]}
+    font-size: ${({ theme }) => theme.textSizes["text-regular-s"]};
   }
 `;
 
 export const TypeCoffee = styled.span`
-  background: ${({ theme }) => theme.colors["brand-yellow-light"]};
-  color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
-  border-radius: 50px;
   padding: 4px 8px;   
   font-weight: 700;
+  border-radius: 50px;
+  color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
   font-size: ${({ theme }) => theme.textSizes["components-tag"]};
+  background: ${({ theme }) => theme.colors["brand-yellow-light"]};
 `;
 
 export const FooterCart = styled.div`
@@ -60,23 +60,27 @@ export const FooterCart = styled.div`
 `;
 
 export const AreaCart = styled.button`
-  width: 2.375rem;
-  height: 2.375rem;
+  border: none;
   padding: 8px;
   display: flex;
+  width: 2.375rem;
+  height: 2.375rem;
   border-radius: 6px;
-  border: none;
   align-items: center;
   justify-content: center;
-  background: ${({ theme }) => theme.colors["brand-purple-dark"]};
   color: ${({ theme }) => theme.colors["base-white"]};
+  background: ${({ theme }) => theme.colors["brand-purple-dark"]};
+
+  &:hover{
+    background: ${({ theme }) => theme.colors["brand-purple"]};
+  }
 `;
 
 export const PriceCoffee = styled.span`
   width: 100%;
+  font-weight: 800;
   text-align: right;
   font-family: ${({ theme }) => theme.fonts.title};
-  font-weight: 800;
   color: ${({ theme }) => theme.colors["base-text"]};
   font-size: ${({ theme }) => theme.textSizes["title-title-m"]};
   
@@ -100,15 +104,19 @@ export const AreaQuantityCoffee = styled.div`
 `;
 
 export const CoffeeButton = styled.button`
-  display: flex;
   border: none;
   outline: none;
+  display: flex;
   width: 0.875rem;
   height: 0.875rem;
   align-items: center;
   justify-content: center;
   background: transparent;
   color: ${({ theme }) => theme.colors["brand-purple"]};
+
+  &:hover{
+    color: ${({ theme }) => theme.colors["brand-purple-dark"]};
+  }
 `;
 
 export const CoffeeQuantity = styled.span`

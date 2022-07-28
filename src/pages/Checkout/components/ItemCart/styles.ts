@@ -16,9 +16,11 @@ export const ItemCartContainer = styled.div`
 `;
 
 export const ImageCoffee = styled.img`
+  width: 50px;
+  height: 50px;
+
   ${mobile({ width: '50px', height: '50px' })};
 
-  width: 65px;
 `;
 
 export const TitleCoffee = styled.h1`
@@ -36,17 +38,19 @@ export const PriceCoffee = styled.h1`
 
 export const AreaButtonCart = styled.div`
   
-  display: flex;
   gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   button{ 
+    width: 90px;
+    border: none;
     display: flex;
+    padding: 6px 0;
+    border-radius: 6px;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
-    padding: 6px 0;
-    border: none;
-    width: 90px;
 
     color: ${({ theme }) => theme.colors["base-text"]};
     background-color: ${({ theme }) => theme.colors["base-button"]};
@@ -54,6 +58,13 @@ export const AreaButtonCart = styled.div`
 
     svg{
       color: ${({ theme }) => theme.colors['brand-purple']};
+    }
+    
+    &:hover{
+      color: ${({ theme }) => theme.colors["base-subtitle"]};
+      svg{
+        color: ${({ theme }) => theme.colors['brand-purple-dark']};
+      }
     }
   }
 `;
@@ -68,8 +79,9 @@ export const AreaQuantityCoffee = styled.div`
   justify-content: center;
 
   background: ${({ theme }) => theme.colors["base-button"]};
+`;
 
-  button{
+export const CoffeeButton = styled.button`
     display: flex;
     border: none;
     outline: none;
@@ -79,19 +91,10 @@ export const AreaQuantityCoffee = styled.div`
     justify-content: center;
     background: transparent;
     color: ${({ theme }) => theme.colors['brand-purple']};
-  }
-`;
 
-export const CoffeeButton = styled.button`
-  display: flex;
-  border: none;
-  outline: none;
-  width: 0.875rem;
-  height: 0.875rem;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  color: ${({ theme }) => theme.colors['brand-purple']};
+    &:hover {
+      color: ${({ theme }) => theme.colors['brand-purple-dark']};
+    }
 `;
 
 export const CoffeeQuantity = styled.p`
