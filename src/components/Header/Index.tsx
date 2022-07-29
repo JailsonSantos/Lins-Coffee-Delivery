@@ -7,7 +7,6 @@ import { styled } from '@mui/material/styles';
 import Badge, { BadgeProps } from '@mui/material/Badge';
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { clearCart } from "../../redux/apiCalls";
 
 const StyledBadge = styled(Badge)<BadgeProps>(() => ({
   '& .MuiBadge-badge': {
@@ -32,7 +31,7 @@ export function Header() {
         <img src={LogoCoffeeDelivery} alt="Imagem de um copo azul, cheio de café" />
       </NavLink>
       <div>
-        <LocalizationButton onClick={() => clearCart(dispatch)}>
+        <LocalizationButton>
           <MapPin size={22} weight="fill" />
           <span>São Luis - MA</span>
         </LocalizationButton>

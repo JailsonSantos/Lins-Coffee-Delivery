@@ -26,6 +26,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from "../../redux/store";
 import { clearCart } from "../../redux/apiCalls";
 
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod' // Quando biblioteca não tem export default, usa-se o import desta forma
+
+const newAddressFormValidationScheme = zod.object({
+  cep: zod.number().min(8, 'CEP deve conter no mínimo 8 números'),
+  rua: zod.string().min(1, 'Informe a tarefa'),
+  numero: zod.number().min(1, 'Número no mínimo 1').max(9999, 'Número no máximo 9999'),
+  complemento: zod.string().min(1, 'Informe a tarefa'),
+  bairro: zod.string().min(1, 'Informe a tarefa'),
+  cidade: zod.string().min(1, 'Informe a tarefa'),
+  uf: zod.string().min(1, 'Informe a tarefa'),
+});
+
+
 export function Checkout() {
 
   const dispatch = useDispatch();
@@ -43,7 +58,7 @@ export function Checkout() {
     <AreaCheckoutContainer>
       <AreaAddress>
         <TitleOfAddress>Complete seu pedido</TitleOfAddress>
-        <form action="">
+        <form >
           <div>
             <MapPinLine size={20} />
             <div>
@@ -52,13 +67,42 @@ export function Checkout() {
             </div>
           </div>
           <AreaInputs>
-            <input type="text" placeholder="CEP" />
-            <input type="text" placeholder="Rua" />
-            <input type="number" placeholder="Número" />
-            <input type="text" placeholder="Complemento opcional" />
-            <input type="text" placeholder="Bairro" />
-            <input type="text" placeholder="Cidade" />
-            <input type="text" placeholder="UF" />
+            <input
+              type="text"
+              placeholder="CEP"
+
+            />
+            <input
+              type="text"
+              placeholder="Rua"
+
+            />
+            <input
+              type="number"
+              placeholder="Número"
+
+            />
+            <input
+              type="text"
+              placeholder="Complemento opcional"
+
+            />
+            <input
+              type="text"
+              placeholder="Bairro"
+
+            />
+            <input
+              type="text"
+              placeholder="Cidade"
+
+            />
+
+            <input
+              type="text"
+              placeholder="UF"
+
+            />
           </AreaInputs>
 
         </form>
@@ -114,7 +158,7 @@ export function Checkout() {
               <span>Total a Pagar</span> <span>R$ {totalFinal}</span>
             </TotalPrice>
             <NavLink to="/successfulorder" title="Confirmação de Sucesso">
-              <BottomCart onClick={() => clearCart(dispatch)}>
+              <BottomCart type="submit" onClick={() => clearCart(dispatch)}>
                 CONFIRMAR PEDIDO
               </BottomCart>
             </NavLink>
